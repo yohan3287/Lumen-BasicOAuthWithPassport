@@ -33,3 +33,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 # MacOS End
+
+/storage/oauth-public.key
+/storage/oauth-private.key
+/.rnd

@@ -20,5 +20,5 @@ $router->get('/', function () use ($router) {
 $router->post('/register', 'UserController@registerUser');
 
 $router->group(['middleware' => 'client'], function () use ($router) {
-    $router->post('/profile', 'UserController@getProfile');
+    $router->get('/profile', 'UserController@getProfile');
 });
