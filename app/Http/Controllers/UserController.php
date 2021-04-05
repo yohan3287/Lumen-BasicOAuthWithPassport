@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -29,7 +30,7 @@ class UserController extends Controller
         if($request->input('password') == $request->input('confirm_password')) {
             $user = User::create([
                 'email' => $request->input('email'),
-                'password' => $request->input('password')
+                'password' => Hash::make($request->input('password'))
             ]);
 
             if(!empty($user)) {
